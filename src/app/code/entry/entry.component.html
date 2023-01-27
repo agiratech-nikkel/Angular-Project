@@ -1,0 +1,130 @@
+<!-- <div class="displayTable">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <h3>Sign In</h3>
+        <div class="formGroup">
+          <input type="text" class="formControl" placeholder="Username" #userName required>
+        </div>
+        <div class="formGroup">
+          <input type="password" class="formControl" placeholder="Password" #userPassword required>
+        </div> -->
+<!-- Calling SignIn Api from AuthService -->
+<!-- <div class="formGroup">
+          <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+        </div>
+        <div class="formGroup">
+          <span class="or"><span class="orInner">Or</span></span>
+        </div> -->
+<!-- Calling GoogleAuth Api from AuthService -->
+<!-- <div class="formGroup">
+          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+            <i class="fab fa-google-plus-g"></i>
+            Log in with Google
+          </button>
+        </div>
+        <div class="forgotPassword">
+          <span routerLink="/forgot-password">Forgot Password?</span>
+        </div>
+      </div>
+      <div class="redirectToLogin">
+        <span>Don't have an account?<span class="redirect" > Sign Up</span></span>
+      </div>
+    </div>
+  </div>
+   -->
+<div class="login-page">
+  <section class="login-page-container">
+    <div class="login-page-imgcontainer">
+      <img class="login-page-imgcontainer-img" src="../../../assets/image/landingpage.png" />
+    </div>
+    <div class="login-page-content" *ngIf="issingup">
+      <article>
+        <h1>Sign in</h1>
+        <p>If you don't have an account register</p>
+        <p>you can <span class="danger" (click)="issingup = false; loginForm.reset();">Regsister here!</span></p>
+      </article>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="Email">
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error
+          *ngIf="loginForm.get('email')?.errors?.['required']"
+        >
+          Email is Required
+        </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="password">
+          <mat-icon matSuffix>password</mat-icon>
+          <mat-error
+          *ngIf="loginForm.get('password')?.errors?.['required']"
+        >
+          Email is Required
+        </mat-error>
+        </mat-form-field>
+        <button type="submit" class="submit-btn" mat-button>Login</button>
+      </form>
+      <div class="login-page_option">
+        <article>
+          <h5 class="login-page_option-name">Or Continue with</h5>
+          </article>
+        <section>
+        <mat-icon (click)="authService.GoogleAuth()" class="login-page_option-googel" svgIcon="AppGoogel"></mat-icon>
+        </section>
+       </div>
+    </div>
+    <div class="login-page-content" *ngIf="!issingup">
+      <article>
+        <h1>Sign Up</h1>
+        <p>If you already have an account register</p>
+        <p>you can <span class="danger" (click)="issingup = true; regsisterForm.reset();">Login here</span></p>
+      </article>
+      <form [formGroup]="regsisterForm" (ngSubmit)="onRegsister()">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="Email">
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error
+          *ngIf="regsisterForm.get('email')?.errors?.['required']"
+        >
+          Email is Required
+        </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" formControlName="username" placeholder="Username">
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error
+          *ngIf="regsisterForm.get('username')?.errors?.['required']"
+        >
+          Email is Required
+        </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="password">
+          <mat-icon matSuffix>password</mat-icon>
+          <mat-error
+          *ngIf="regsisterForm.get('password')?.errors?.['required']"
+        >
+          Email is Required
+        </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password" formControlName="confirmpassword" placeholder=">Confirm Password">
+          <mat-icon matSuffix>password</mat-icon>
+          <mat-error
+          *ngIf="regsisterForm.get('confirmpassword')?.errors?.['required']"
+        >
+          Email is Required
+        </mat-error>
+        </mat-form-field>
+        <button type="submit" class="submit-btn" mat-button>Regsister</button>
+      </form>
+    </div>
+  </section>
+  
+</div>

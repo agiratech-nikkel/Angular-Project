@@ -1,0 +1,60 @@
+::ng-deep app-entry{
+    .login-page{
+        background-color: #e5e5e5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        &-container{
+            display: flex;
+            flex-direction: row;
+        }
+        &-imgcontainer{
+            background-color: #ffebe0;
+           
+            width: 65%;
+            &-img{
+            padding: 5rem;
+         
+            }
+        }
+        &-content{
+            width: 350px;
+            padding: 7rem 3rem 7rem 3rem;
+            background-color: white;
+        }
+        &_option{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            &-name{
+            color: #B5B5B5;
+            }
+            &-googel{
+                cursor: pointer;
+            }
+        }
+    }
+    .danger{
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .submit-btn{
+       width: 350px; 
+       background-color: #FF432A;
+       border-radius: 50px;
+       color: white;
+       margin-top: 30px;
+    }
+   
+   
+}
+::ng-deep.mat-form-field{
+    width:350px !important;
+ }
+ 
+
+ 

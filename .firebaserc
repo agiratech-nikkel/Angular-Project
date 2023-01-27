@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-3610b": {
+      "hosting": {
+        "Angular-project": [
+          "angular-3610b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-3610b"
+  }
+}
